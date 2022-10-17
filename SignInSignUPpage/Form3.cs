@@ -11,8 +11,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SignInSignUPpage
 {
+
     public partial class FormSignUp : Form
     {
+        char? none = null;
         public FormSignUp()
         {
             InitializeComponent();
@@ -139,6 +141,7 @@ namespace SignInSignUPpage
             if (txtPassword.Text == "Password")
             {
                 txtPassword.Text = "";
+                txtPassword.PasswordChar = '*';
                 txtPassword.ForeColor = Color.Black;
             }
         }
@@ -161,21 +164,35 @@ namespace SignInSignUPpage
         private void FormSignUp_Load(object sender, EventArgs e)
         {
             this.ActiveControl = lbllFocusOn;
+            btnHidePassword.Visible = false;
+
+            txtPassword.PasswordChar = Convert.ToChar(none);
+
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            
-            if(txtFirstName.Text == "Username" || txtSurname.Text == "Surname" || txtEmailOrNumber.Text == "Number" || txtPassword.Text == "Password")
+            try
             {
-                MessageBox.Show(" All field have to filled", "Errorr!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
 
-            else
+                if (txtFirstName.Text == "Username" || txtSurname.Text == "Surname" || txtEmailOrNumber.Text == "Number" || txtPassword.Text == "Password")
+                {
+                    MessageBox.Show(" All field have to filled", "Errorr!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                else
+                {
+                    FormCaptcha form1 = new FormCaptcha();
+                    this.Hide();
+                    form1.Show();
+
+                    UserInfo.userName = txtFirstName.Text;
+                    UserInfo.passWord = txtPassword.Text;
+                }
+            }
+            catch
             {
-                FormLogin form1 = new FormLogin();
-                this.Hide();
-                form1.Show();
+                MessageBox.Show("Errorrr!!", "There is an exception in this case", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -183,6 +200,28 @@ namespace SignInSignUPpage
         private void txtSurname_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnHidePassword_Click(object sender, EventArgs e)
+        {
+            btnShowPassword.Visible = true;
+            btnHidePassword.Visible = false;
+            if (txtPassword.PasswordChar == '\0')
+            {
+                btnShowPassword.BringToFront();
+                txtPassword.PasswordChar = '*';
+            }
+        }
+
+        private void btnShowPassword_Click(object sender, EventArgs e)
+        {
+            btnHidePassword.Visible = true;
+            btnShowPassword.Visible = false;
+            if (txtPassword.PasswordChar == '*')
+            {
+                btnShowPassword.BringToFront();
+                txtPassword.PasswordChar = '\0';
+            }
         }
     }
 }

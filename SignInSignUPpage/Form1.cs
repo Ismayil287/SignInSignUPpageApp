@@ -6,8 +6,9 @@ namespace SignInSignUPpage
         {
             InitializeComponent();
         }
-
         
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -23,7 +24,8 @@ namespace SignInSignUPpage
                 form2.Closed += (s, args) => this.Close();
                 form2.Show();
             }
-            else if (!(txtUserName.Text == UserInfo.userName)){
+            else if (!(txtUserName.Text == UserInfo.userName))
+            {
                 MessageBox.Show("Username is incorrect!");
             }
             else
@@ -75,6 +77,16 @@ namespace SignInSignUPpage
                 btnShowPassword.BringToFront();
                 txtPassword.PasswordChar = '\0';
             }
+        }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

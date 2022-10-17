@@ -53,6 +53,7 @@
             this.textBox1.Location = new System.Drawing.Point(11, 74);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(332, 65);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "We have e-mailed your password reset link!";
@@ -65,6 +66,7 @@
             this.textBox2.Location = new System.Drawing.Point(25, 166);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(295, 61);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "Check your e-mail and try login again.";

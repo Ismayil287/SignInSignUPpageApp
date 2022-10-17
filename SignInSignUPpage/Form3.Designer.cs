@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSignUp));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -49,6 +50,8 @@
             this.emailmust = new System.Windows.Forms.TextBox();
             this.passwordmust = new System.Windows.Forms.TextBox();
             this.lbllFocusOn = new System.Windows.Forms.Label();
+            this.btnHidePassword = new System.Windows.Forms.Button();
+            this.btnShowPassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -118,6 +121,7 @@
             this.txtPassword.Location = new System.Drawing.Point(12, 203);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(452, 44);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
@@ -287,6 +291,7 @@
             this.surnamemust.Name = "surnamemust";
             this.surnamemust.Size = new System.Drawing.Size(44, 44);
             this.surnamemust.TabIndex = 16;
+            this.surnamemust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // usernamemust
             // 
@@ -306,6 +311,7 @@
             this.emailmust.Name = "emailmust";
             this.emailmust.Size = new System.Drawing.Size(44, 44);
             this.emailmust.TabIndex = 18;
+            this.emailmust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // passwordmust
             // 
@@ -315,6 +321,7 @@
             this.passwordmust.Name = "passwordmust";
             this.passwordmust.Size = new System.Drawing.Size(44, 44);
             this.passwordmust.TabIndex = 19;
+            this.passwordmust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbllFocusOn
             // 
@@ -324,12 +331,38 @@
             this.lbllFocusOn.Size = new System.Drawing.Size(0, 15);
             this.lbllFocusOn.TabIndex = 20;
             // 
+            // btnHidePassword
+            // 
+            this.btnHidePassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHidePassword.BackgroundImage")));
+            this.btnHidePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHidePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHidePassword.Location = new System.Drawing.Point(367, 203);
+            this.btnHidePassword.Name = "btnHidePassword";
+            this.btnHidePassword.Size = new System.Drawing.Size(54, 44);
+            this.btnHidePassword.TabIndex = 21;
+            this.btnHidePassword.UseVisualStyleBackColor = true;
+            this.btnHidePassword.Click += new System.EventHandler(this.btnHidePassword_Click);
+            // 
+            // btnShowPassword
+            // 
+            this.btnShowPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnShowPassword.BackgroundImage")));
+            this.btnShowPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnShowPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowPassword.Location = new System.Drawing.Point(367, 203);
+            this.btnShowPassword.Name = "btnShowPassword";
+            this.btnShowPassword.Size = new System.Drawing.Size(54, 44);
+            this.btnShowPassword.TabIndex = 22;
+            this.btnShowPassword.UseVisualStyleBackColor = true;
+            this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
+            // 
             // FormSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(476, 500);
+            this.Controls.Add(this.btnShowPassword);
+            this.Controls.Add(this.btnHidePassword);
             this.Controls.Add(this.lbllFocusOn);
             this.Controls.Add(this.passwordmust);
             this.Controls.Add(this.emailmust);
@@ -383,5 +416,7 @@
         private TextBox emailmust;
         private TextBox passwordmust;
         private Label lbllFocusOn;
+        private Button btnHidePassword;
+        private Button btnShowPassword;
     }
 }
