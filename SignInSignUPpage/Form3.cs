@@ -75,16 +75,23 @@ namespace SignInSignUPpage
 
         private void txtFirstName_Leave(object sender, EventArgs e)
         {
-            if(txtFirstName.Text == "")
+            try
             {
-                txtFirstName.Text = "Username";
-                txtFirstName.ForeColor = Color.Silver;
-                usernamemust.Text = "*";
-                usernamemust.ForeColor = Color.Red;
+                if (txtFirstName.Text == "")
+                {
+                    txtFirstName.Text = "Username";
+                    txtFirstName.ForeColor = Color.Silver;
+                    usernamemust.Text = "*";
+                    usernamemust.ForeColor = Color.Red;
+                }
+                else if (txtFirstName.Text.Length > 0)
+                {
+                    usernamemust.Text = "";
+                }
             }
-            else if(txtFirstName.Text.Length > 0)
+            catch
             {
-                usernamemust.Text = "";
+                MessageBox.Show("Errorrr!!", "There is an exception in this case", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -123,16 +130,23 @@ namespace SignInSignUPpage
 
         private void txtEmailOrNumber_Leave(object sender, EventArgs e)
         {
-            if (txtEmailOrNumber.Text == "")
+            try
             {
-                txtEmailOrNumber.Text = "Email";
-                txtEmailOrNumber.ForeColor = Color.Silver;
-                emailmust.Text = "*";
-                emailmust.ForeColor = Color.Red;
+                if (txtEmailOrNumber.Text == "")
+                {
+                    txtEmailOrNumber.Text = "Email";
+                    txtEmailOrNumber.ForeColor = Color.Silver;
+                    emailmust.Text = "*";
+                    emailmust.ForeColor = Color.Red;
+                }
+                else if (txtEmailOrNumber.Text.Length > 0)
+                {
+                    emailmust.Text = "";
+                }
             }
-            else if (txtEmailOrNumber.Text.Length > 0)
+            catch
             {
-                emailmust.Text = "";
+                MessageBox.Show("Errorrr!!", "There is an exception in this case", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -148,17 +162,25 @@ namespace SignInSignUPpage
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "")
+            try
             {
-                txtPassword.Text = "Password";
-                txtPassword.ForeColor = Color.Silver;
-                passwordmust.Text = "*";
-                passwordmust.ForeColor = Color.Red;
+                if (txtPassword.Text == "")
+                {
+                    txtPassword.Text = "Password";
+                    txtPassword.ForeColor = Color.Silver;
+                    passwordmust.Text = "*";
+                    passwordmust.ForeColor = Color.Red;
+                }
+                else if (txtPassword.Text.Length > 0)
+                {
+                    passwordmust.Text = "";
+                }
             }
-            else if(txtPassword.Text.Length > 0)
+            catch
             {
-                passwordmust.Text = "";
+                MessageBox.Show("Errorrr!!", "There is an exception in this case", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void FormSignUp_Load(object sender, EventArgs e)

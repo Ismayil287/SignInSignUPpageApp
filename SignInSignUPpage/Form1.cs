@@ -17,24 +17,32 @@ namespace SignInSignUPpage
 
         private void loginbutton_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text == UserInfo.userName && txtPassword.Text == UserInfo.passWord)
+            try
             {
-                this.Hide();
-                var form2 = new FormWelcome();
-                form2.Closed += (s, args) => this.Close();
-                form2.Show();
+                if (txtUserName.Text == UserInfo.userName && txtPassword.Text == UserInfo.passWord)
+                {
+                    this.Hide();
+                    var form2 = new FormWelcome();
+                    form2.Closed += (s, args) => this.Close();
+                    form2.Show();
+                }
+                else if (!(txtUserName.Text == UserInfo.userName))
+                {
+                    MessageBox.Show("Username is incorrect!");
+                }
+                else
+                {
+                    MessageBox.Show("Password is incorrect!");
+                }
             }
-            else if (!(txtUserName.Text == UserInfo.userName))
+
+            catch
             {
-                MessageBox.Show("Username is incorrect!");
-            }
-            else
-            {
-                MessageBox.Show("Password is incorrect!");
+                MessageBox.Show("Errorrr!!", "There is an exception in this case", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+    private void btnClear_Click(object sender, EventArgs e)
         {
             txtUserName.Clear();
             txtPassword.Clear(); 
