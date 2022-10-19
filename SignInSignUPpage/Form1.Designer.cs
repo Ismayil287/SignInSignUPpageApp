@@ -36,7 +36,6 @@
             this.loginbutton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.linklblForgotPassword = new System.Windows.Forms.LinkLabel();
@@ -125,19 +124,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.Location = new System.Drawing.Point(59, 335);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(120, 21);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Remember me ";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // btnClear
             // 
@@ -234,7 +220,6 @@
             this.Controls.Add(this.linklblForgotPassword);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.loginbutton);
@@ -263,7 +248,6 @@
         private Button loginbutton;
         private Label label2;
         private PictureBox pictureBox1;
-        private CheckBox checkBox1;
         private Button btnClear;
         private Button btnRegister;
         private LinkLabel linklblForgotPassword;
